@@ -1,6 +1,7 @@
-# ATSD Integration for Metrics
+# ATSD Reportrer for Metrics
 
-The ``metrics-atsd`` module implements ``AtsdReporter``, which allows Java applications to stream metrics into [Axibase Time-Series Database][atsd] .
+
+The ``metrics-atsd`` module implements ``AtsdReporter``, which allows Java applications to stream [dropwizard-metrics][metrics] into [Axibase Time-Series Database][atsd] .
 
 [atsd]: https://axibase.com/products/axibase-time-series-database
 
@@ -165,3 +166,4 @@ The library provides 5 types of metrics:
 [meter]: https://dropwizard.github.io/metrics/3.1.0/getting-started/#meters
 [histogram]: https://dropwizard.github.io/metrics/3.1.0/getting-started/#histograms
 [timer]: https://dropwizard.github.io/metrics/3.1.0/getting-started/#timers
+[dropwizard-metrics]: https://github.com/dropwizard/metrics
