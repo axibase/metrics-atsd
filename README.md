@@ -1,7 +1,7 @@
 # ATSD Reportrer for Metrics
 
 
-The ``metrics-atsd`` module implements ``AtsdReporter``, which allows Java applications to stream [dropwizard-metrics][metrics] into [Axibase Time-Series Database][atsd] .
+The ``metrics-atsd`` module implements ``AtsdReporter``, which allows Java applications to stream [metrics][dropwizard-metrics] into [Axibase Time-Series Database][atsd] .
 
 [atsd]: https://axibase.com/products/axibase-time-series-database
 
