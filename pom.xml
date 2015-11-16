@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.axibase</groupId>
@@ -10,6 +11,40 @@
     <description>
         A reporter for Metrics which announces measurements to a ATSD server.
     </description>
+
+    <url>https://github.com/axibase/metrics-atsd</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.axibase.com/atsd/axibase-apache-2.0.pdf</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+
+    <developers>
+        <developer>
+            <name>Development</name>
+            <email>no_reply@axibase.com</email>
+            <organization>Axibase Corporation</organization>
+            <organizationUrl>https://axibase.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:axibase/metrics-atsd.git</connection>
+        <developerConnection>scm:git:git@github.com:axibase/metrics-atsd.git</developerConnection>
+        <url>git@github.com:axibase/metrics-atsd.git</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
+
 
     <repositories>
         <repository>
@@ -33,6 +68,53 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/zip.xml</descriptor>
+                    </descriptors>
                 </configuration>
             </plugin>
         </plugins>
