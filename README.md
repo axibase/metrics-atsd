@@ -5,6 +5,19 @@ The ``metrics-atsd`` module implements ``AtsdReporter``, which allows Java appli
 
 [atsd]: https://axibase.com/products/axibase-time-series-database
 
+
+## pom.xml
+
+Add the following dependence in your ```pom.xml``` :
+
+```xml
+<dependency>
+    <groupId>com.axibase</groupId>
+    <artifactId>metrics-atsd</artifactId>
+    <version>3.1.2</version>
+</dependency>
+```
+
 ## Configure Sender
 
 TCP:
